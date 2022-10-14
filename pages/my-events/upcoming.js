@@ -33,18 +33,21 @@ export default function MyUpcomingEvents() {
     variables: { eventOwner, currentTimestamp },
   });
 
-  if (loading)
+  if (loading) {
     return (
       <Dashboard page="events" isUpcoming={true}>
         <p>Loading...</p>
       </Dashboard>
     );
-  if (error)
+  }
+
+  if (error) {
     return (
       <Dashboard page="events" isUpcoming={true}>
         <p>`Error! ${error.message}`</p>
       </Dashboard>
     );
+  }
 
   return (
     <Dashboard page="events" isUpcoming={true}>
